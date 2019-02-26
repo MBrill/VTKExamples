@@ -6,6 +6,7 @@
 
 # CMake-Build-Ordner
 **/[bB]uild/*
+**/doc/**
 
 # vi
 **/*~

@@ -16,6 +16,14 @@
 #include "vtkActor.h"
 #include "vtkCamera.h"
 
+// -----
+// Voraussetzungen für dieses Projekt
+//
+// Damit dieses Beispiel gebaut werden kann auf Win10
+// setzen wir zwei Umgbungsvariablen:
+// VTK_DIR: Verzeichnis, in das VTK installiert wurde
+// VTK_ROOT: das Verzeichnis ${VTK_DIR}/bin, in dem insbesondere die dll-Dateien liegen!
+// -----
 int main( int argc, char *argv[] )
 {
     int i;

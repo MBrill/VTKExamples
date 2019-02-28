@@ -2,7 +2,7 @@
 #  Erste eigene VTK-Anwendung
 # ----------------------------------------------------------------------
 PROJECT(FIRSTVTK)
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.13)
 
 # Mehr Ausgaben ...
 if(NOT CMAKE_VERBOSE_MAKEFILE)

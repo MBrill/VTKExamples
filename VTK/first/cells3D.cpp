@@ -1,6 +1,3 @@
-// ----------------------------------------------------------------------------
-//   Ein Beispiel, das einen unstructured grid erstellt und darstellt.
-// ----------------------------------------------------------------------------
 #include "vtkPoints.h"
 #include "vtkVoxel.h"
 #include "vtkTetra.h"
@@ -8,13 +5,11 @@
 #include "vtkWedge.h"
 #include "vtkUnstructuredGrid.h"
 #include "vtkDataSetMapper.h"
-#include "vtkWindow.h"
+#include "vtkProperty.h"
+#include "vtkActor.h"
 #include "vtkRenderer.h"
 #include "vtkRenderWindow.h"
 #include "vtkRenderWindowInteractor.h"
-#include "vtkProperty.h"
-#include "vtkActor.h"
-#include "vtkCamera.h"
 
 // -----
 // Voraussetzungen für dieses Projekt
@@ -23,6 +18,7 @@
 // setzen wir zwei Umgbungsvariablen:
 // VTK_DIR: Verzeichnis, in das VTK installiert wurde
 // VTK_ROOT: das Verzeichnis ${VTK_DIR}/bin, in dem insbesondere die dll-Dateien liegen!
+// Wir fügen VTK_ROOT dem Suchpfad hinzu!
 // -----
 int main( int argc, char *argv[] )
 {

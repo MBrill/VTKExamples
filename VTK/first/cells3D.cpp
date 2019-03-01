@@ -1,6 +1,7 @@
 #include "vtkPoints.h"
 #include "vtkVoxel.h"
 #include "vtkTetra.h"
+#include <vtkSmartPointer.h>
 #include "vtkPyramid.h"
 #include "vtkWedge.h"
 #include "vtkUnstructuredGrid.h"
@@ -21,13 +22,11 @@
 // Wir fügen VTK_ROOT dem Suchpfad hinzu!
 // -----
 int main( int argc, char *argv[] )
-{
-    int i;
-    
+{   
     // Zuerst die Geometrie der Zellen festlegen
     // Dies geschieht in einer Instanz von vtkPoints mit insgesamt
     // 23 Punkten.
-    vtkPoints *points = vtkPoints::New();
+	vtkSmartPointer <vtkPoints> points = vtkSmartPointer <vtkPoints>::New();
     // Die Gitterpunktkoordinaten setzen.
     points->SetNumberOfPoints(23);
     points->InsertPoint(0,0,0,0);
@@ -56,24 +55,26 @@ int main( int argc, char *argv[] )
     points->InsertPoint(20, 6,1,0);
     points->InsertPoint(21, 5,1,0);
     points->InsertPoint(22, 5.5,0.5,1);
+
     // Eine Voxel-Zelle 
-    vtkVoxel *aVoxel = vtkVoxel::New();
-       for (i=0; i<8; i++) aVoxel->GetPointIds()->SetId(i,i);
+	vtkSmartPointer<vtkVoxel> aVoxel = vtkSmartPointer <vtkVoxel>::New();
+    for (int i=0; i<8; i++) 
+		aVoxel->GetPointIds()->SetId(i,i);
     // Eine Tetraeder-Zelle
-    vtkTetra *aTetra = vtkTetra::New();
+	vtkSmartPointer<vtkTetra> aTetra = vtkSmartPointer<vtkTetra>::New();
        aTetra->GetPointIds()->SetId(0,8);
        aTetra->GetPointIds()->SetId(1,9);
        aTetra->GetPointIds()->SetId(2,10);
        aTetra->GetPointIds()->SetId(3,11);
     // Eine Prisma-Zelle
-    vtkWedge *aWedge = vtkWedge::New();
+	vtkSmartPointer<vtkWedge> aWedge = vtkSmartPointer<vtkWedge>::New();
        aWedge->GetPointIds()->SetId(0,12);
        aWedge->GetPointIds()->SetId(1,13);
        aWedge->GetPointIds()->SetId(2,14);
        aWedge->GetPointIds()->SetId(3,15);
        aWedge->GetPointIds()->SetId(4,16);
        aWedge->GetPointIds()->SetId(5,17);
-    vtkPyramid *aPyramid = vtkPyramid::New();
+    vtkSmartPointer<vtkPyramid> aPyramid = vtkSmartPointer<vtkPyramid>::New();
        aPyramid->GetPointIds()->SetId(0,18);
        aPyramid->GetPointIds()->SetId(1,19);
        aPyramid->GetPointIds()->SetId(2,20);
@@ -83,7 +84,7 @@ int main( int argc, char *argv[] )
     // Die Zellen in den Datensatz ablegen.
     // Instanz eines unstrukturierten Gitters;
     // die Instanz points wird als Gitterpunkte verwendet.
-    vtkUnstructuredGrid *theGrid = vtkUnstructuredGrid::New();
+    vtkSmartPointer<vtkUnstructuredGrid> theGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
        theGrid->Allocate(1,1);
        theGrid->SetPoints(points);
        theGrid->InsertNextCell(aVoxel->GetCellType(),aVoxel->GetPointIds());
@@ -93,24 +94,24 @@ int main( int argc, char *argv[] )
        
     // Die Daten abbilden auf ein polygonales Netz mit einer Instanz
     // von vtkDataSetMapper.
-    vtkDataSetMapper *mapper = vtkDataSetMapper::New();
+    vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
         mapper->SetInputData(theGrid);
     
     // Grafische Attribute für die Darstellung als 
     // Instanz der Klasse vtkProperty    
-    vtkProperty *property = vtkProperty::New();
+    vtkSmartPointer<vtkProperty> property = vtkSmartPointer<vtkProperty>::New();
         property->SetDiffuseColor(0.8,0.0,0.0);
         
     // Ein grafisches Objekt, als Attribute wird
     // die Instanz property verwendet.
-    vtkActor *actor = vtkActor::New();
+    vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
         actor->SetMapper(mapper);
         actor->SetProperty(property);
         
     // Einen Renderer für die interaktive Darstellung instanzieren,
     // die Hintergrundfarbe setzen und Einstellungen an der aktiven
     // Kamera.
-    vtkRenderer *render = vtkRenderer::New();
+    vtkSmartPointer<vtkRenderer> render = vtkSmartPointer<vtkRenderer>::New();
      	render->AddActor(actor);
         render->SetBackground(1,1,1);
         // Die Kamera des Renderers einstellen.
@@ -118,7 +119,7 @@ int main( int argc, char *argv[] )
         
     // Als letzten Schritt benötigen wir ein Fenster, in das der Renderer
     // ausgibt.
-    vtkRenderWindow *renWin = vtkRenderWindow::New();
+    vtkSmartPointer<vtkRenderWindow> renWin = vtkSmartPointer<vtkRenderWindow>::New();
         renWin->SetSize(640,480);
 	    renWin->AddRenderer(render);
 	    renWin->Render();
@@ -128,9 +129,10 @@ int main( int argc, char *argv[] )
     //    q oder e: beenden des Programms
     //           r: Reset der Ansicht
     vtkRenderWindowInteractor *interact = vtkRenderWindowInteractor::New();
-        interact->SetRenderWindow(renWin);
-        renWin->Render();
-        interact->Start();
+    
+	interact->SetRenderWindow(renWin);
+    renWin->Render();
+    interact->Start();
 
     // Aufräumen; die Konstruktoren in VTK werden als Memberfunktion
     // Delete() aufgerufen.
@@ -143,5 +145,5 @@ int main( int argc, char *argv[] )
     theGrid->Delete();
     points->Delete();    
    
-    return 0;
+	return EXIT_SUCCESS;
 }

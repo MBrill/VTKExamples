@@ -10,47 +10,54 @@
 #include "vtkCubeSource.h"
 #include "vtkSphereSource.h"
 #include "vtkProperty.h"
+#include <vtkSmartPointer.h>
 
 int main (void)
 {
-  // create rendering windows and three renderers
-  vtkRenderer *ren1 = vtkRenderer::New();
-  vtkRenderer *ren2 = vtkRenderer::New();
-  vtkRenderWindow *renWindow1 = vtkRenderWindow::New();
+  // Zwei Renderer und zwei Fenster erzeugen
+  vtkSmartPointer<vtkRenderer> ren1 = vtkSmartPointer<vtkRenderer>::New();
+  vtkSmartPointer<vtkRenderer> ren2 = vtkSmartPointer<vtkRenderer>::New();
+  vtkSmartPointer<vtkRenderWindow> renWindow1 = vtkSmartPointer<vtkRenderWindow>::New();
+    renWindow1->SetSize(800, 400);
+	renWindow1->SetPosition(100, 100);
     renWindow1->AddRenderer(ren1);
     renWindow1->AddRenderer(ren2);
-  vtkRenderWindowInteractor *iren1 = vtkRenderWindowInteractor::New();
+  vtkSmartPointer<vtkRenderWindowInteractor> iren1 = vtkSmartPointer<vtkRenderWindowInteractor>::New();
     iren1->SetRenderWindow(renWindow1);
 
-  vtkRenderer *ren3 = vtkRenderer::New();
-  vtkRenderWindow *renWindow2 = vtkRenderWindow::New();
+  // Noch ein Renderer, ein Fenster und ein Interactor
+  vtkSmartPointer<vtkRenderer> ren3 = vtkSmartPointer<vtkRenderer>::New();
+  vtkSmartPointer<vtkRenderWindow> renWindow2 = vtkSmartPointer<vtkRenderWindow>::New();
+    renWindow2->SetSize(400, 400);
+	renWindow2->SetPosition(1100, 100);
     renWindow2->AddRenderer(ren3);
-  vtkRenderWindowInteractor *iren2 = vtkRenderWindowInteractor::New();
+  vtkSmartPointer<vtkRenderWindowInteractor> iren2 = vtkSmartPointer<vtkRenderWindowInteractor>::New();
     iren2->SetRenderWindow(renWindow2);
 
-  // Einen Actor erzeugen mit einem Kegel erzeugen
-  vtkConeSource *cone = vtkConeSource::New();
+  // Einen Actor mit einem Kegel erzeugen
+  vtkSmartPointer<vtkConeSource> cone = vtkSmartPointer<vtkConeSource>::New();
      cone->SetResolution(8);
-  vtkPolyDataMapper *coneMapper = vtkPolyDataMapper::New();
-    coneMapper->SetInputData(cone->GetOutput());
-  vtkActor *coneActor = vtkActor::New();
+  vtkSmartPointer<vtkPolyDataMapper> coneMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+    coneMapper->SetInputConnection(cone->GetOutputPort());
+  vtkSmartPointer<vtkActor> coneActor = vtkSmartPointer<vtkActor>::New();
     coneActor->SetMapper(coneMapper);
     coneActor->GetProperty()->SetColor(0.2000,0.6300,0.7900);
 
-  // Einen Actor erzeugen mit einem Würfel erzeugen
-  vtkCubeSource *cube = vtkCubeSource::New();
-  vtkPolyDataMapper *cubeMapper = vtkPolyDataMapper::New();
-    cubeMapper->SetInputData(cube->GetOutput());
-  vtkActor *cubeActor = vtkActor::New();
+  // Einen Actor mit einem Würfel erzeugen
+  vtkSmartPointer<vtkCubeSource> cube = vtkSmartPointer<vtkCubeSource>::New();
+  vtkSmartPointer<vtkPolyDataMapper> cubeMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+    cubeMapper->SetInputConnection(cube->GetOutputPort());
+	vtkSmartPointer<vtkActor> cubeActor = vtkSmartPointer<vtkActor>::New();
     cubeActor->SetMapper(cubeMapper);
     cubeActor->GetProperty()->SetColor(0.9804,0.5020,0.4471);
 
   // Einen Actor erzeugen mit einer Kugel erzeugen
-  vtkSphereSource *sphere = vtkSphereSource::New();
-    sphere->SetThetaResolution(16); sphere->SetPhiResolution(16);
-  vtkPolyDataMapper *sphereMapper = vtkPolyDataMapper::New();
-    sphereMapper->SetInputData(sphere->GetOutput());
-  vtkActor *sphereActor = vtkActor::New();
+  vtkSmartPointer<vtkSphereSource> sphere = vtkSmartPointer<vtkSphereSource>::New();
+    sphere->SetThetaResolution(16); 
+	sphere->SetPhiResolution(16);
+  vtkSmartPointer<vtkPolyDataMapper> sphereMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+    sphereMapper->SetInputConnection(sphere->GetOutputPort());
+  vtkSmartPointer<vtkActor> sphereActor = vtkSmartPointer<vtkActor>::New();
     sphereActor->SetMapper(sphereMapper);
     sphereActor->GetProperty()->SetColor(0.8900,0.6600,0.4100);
 
@@ -60,9 +67,6 @@ int main (void)
   ren3->AddActor(cubeActor);
 
   // Fenster einstellen
-  renWindow1->SetSize(800,400);
-  renWindow2->SetSize(400,400);
-
   // Viewports und Hintergrundfarbe einstellen
   ren1->SetViewport(0,0,0.5,1);
   ren1->SetBackground(0.9,0.9,0.9);

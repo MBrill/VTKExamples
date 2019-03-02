@@ -17,8 +17,11 @@ Im Verzeichnis liegen Screen-Captures des Ergebnisses. Die Szene ist einfach, wi
 in einem Fenster mit einem Hintergrund von 90%-Grau einen Würfel dar, der weiß eingefärbt ist.
 
 Ohne Stereo:![Ergebnis ohne Stereo] (mono.png "Ohne Stereo")
+
 Rot-Blau Stereo:![Rot-Blau Stereo] (redblue41.png "Rot-Blau Stereo")
+
 Rot-Grün Stereo:![Rot-Grün Stereo] (redgreen42.png "Rot-Grün Stereo")
+
 Rot-Cyan Stereo:![Rot-Cyan Stereo] (redcyan43.png "Rot-Cyan Stereo")
 
 In allen Anwendungen können wir zwischen einem Fenster und Fullscreen wechseln.

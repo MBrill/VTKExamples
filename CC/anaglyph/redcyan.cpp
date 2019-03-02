@@ -30,7 +30,7 @@ int main (void)
     //renWindow->SetFullScreen(true);
     // Stereo-Eigenschaften einstellen
 	renWindow->StereoCapableWindowOn();
-	renWindow->SetStereoTypeToRedBlue();
+	renWindow->SetStereoTypeToAnaglyph();
 	renWindow->SetStereoRender(true);
     renWindow->AddRenderer(ren);
 

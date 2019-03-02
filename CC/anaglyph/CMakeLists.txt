@@ -44,9 +44,13 @@ IF(VTK_FOUND)
   message(STATUS "VTK gefunden. Version: " ${VTK_VERSION} " " VTK_DIR: ${VTK_DIR})
   include(${VTK_USE_FILE})
 
-  # Das Build-Target festlegen
+  # Die  Build-Targets festlegen
   ADD_EXECUTABLE(redblue redblue.cpp)
   TARGET_LINK_LIBRARIES(redblue ${VTK_LIBRARIES})
+  ADD_EXECUTABLE(redcyan redcyan.cpp)
+  TARGET_LINK_LIBRARIES(redcyan ${VTK_LIBRARIES})
+  ADD_EXECUTABLE(colormask colormask.cpp)
+  TARGET_LINK_LIBRARIES(colormask ${VTK_LIBRARIES})
 ELSE(VTK_FOUND)
 	message(FATAL_ERROR "Binary kann ohne VTK nicht gebaut werden! Setzen Sie die Variable VTK_DIR als Umgebungsvariable oder in der CMake-Eingabe!")
 ENDIF(VTK_FOUND)

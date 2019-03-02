@@ -19,7 +19,7 @@ In allen Anwendungen können wir zwischen einem Fenster und Fullscreen wechseln.
 
 Ohne Stereo:
 
-![Ergebnis ohne Stereo] (https://github.com/MBrill/VTKExamples/blob/develop/CC/anaglyph/mono.png)
+!(https://github.com/MBrill/VTKExamples/blob/develop/CC/anaglyph/mono.png)
 
 Rot-Blau Stereo:![Rot-Blau Stereo] (redblue41.png "Rot-Blau Stereo")
 

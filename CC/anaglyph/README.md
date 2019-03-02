@@ -13,3 +13,12 @@ integer-Werte ist im Kommentar von colormask.cpp zu finden. rot-cyan entspricht
 den beiden Werte (4,3) (die erste Zahl steht immer für das linke Auge, 4 entspricht rot).
 Mit (4,1) erhält man rot-blau, und (4,2) ergibt rot-grün-Stereo.
 
+Im Verzeichnis liegen Screen-Captures des Ergebnisses. Die Szene ist einfach, wir stellen
+in einem Fenster mit einem Hintergrund vn 90%-Grau einen Würfel dar, der weiß eingefärbt ist.
+
+Ohne Stereo:![Ergebnis ohne Stereo] (mono.png "Ohne Stereo")
+Rot-Blau Stereo:![Rot-Blau Stereo] (redblue41.png "Rot-Blau Stereo")
+Rot-Grün Stereo:![Rot-Grün Stereo] (redgreen42.png "Rot-Grün Stereo")
+Rot-Cyan Stereo:![Rot-Cyan Stereo] (redcyan43.png "Rot-Cyan Stereo")
+
+In allen Anwendungen können wir zwischen einem Fenster und Fullscreen wechseln.

@@ -16,7 +16,7 @@ Mit (4,1) erhält man rot-blau, und (4,2) ergibt rot-grün-Stereo.
 Im Verzeichnis liegen Screen-Captures des Ergebnisses. Die Szene ist einfach, wir stellen
 in einem Fenster mit einem Hintergrund von 90%-Grau einen Würfel dar, der weiß eingefärbt ist.
 
-Ohne Stereo:![Ergebnis ohne Stereo] (https://github.com/MBrill/VTKExamples/blob/develop/CC/anaglyph/mono.png "Ohne Stereo")
+Ohne Stereo:![Ergebnis ohne Stereo] (https://github.com/MBrill/VTKExamples/develop/CC/anaglyph/mono.png "Ohne Stereo")
 
 Rot-Blau Stereo:![Rot-Blau Stereo] (redblue41.png "Rot-Blau Stereo")
 

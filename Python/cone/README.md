@@ -1,4 +1,4 @@
 # Cube in Python
-Dieses Beispiel zeigt eine VTK-Pipeline in Python. Es wird ein Würfel erzeugt und dargestellt.
+Dieses Beispiel zeigt eine VTK-Pipeline in Python. Es wird ein WÃ¼rfel erzeugt und dargestellt.
 
-Gestestet mit der in VTK erhältlichen VTK 7.1 Binary.
+Getestet mit der in VTK erhÃ¤ltlichen VTK 7.1 Binary.

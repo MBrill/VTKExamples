@@ -15,10 +15,11 @@ Mit (4,1) erhält man rot-blau, und (4,2) ergibt rot-grün-Stereo.
 
 Im Verzeichnis liegen Screen-Captures des Ergebnisses. Die Szene ist einfach, wir stellen
 in einem Fenster mit einem Hintergrund von 90%-Grau einen Würfel dar, der weiß eingefärbt ist.
+In allen Anwendungen können wir zwischen einem Fenster und Fullscreen wechseln.
 
 Ohne Stereo:
 
-![Ergebnis ohne Stereo] (https://octodex.github.com/images/yaktocat.png)
+![Ergebnis ohne Stereo] (https://github.com/MBrill/VTKExamples/edit/develop/CC/anaglyph/mono.png)
 
 Rot-Blau Stereo:![Rot-Blau Stereo] (redblue41.png "Rot-Blau Stereo")
 
@@ -26,4 +27,4 @@ Rot-Grün Stereo:![Rot-Grün Stereo] (redgreen42.png "Rot-Grün Stereo")
 
 Rot-Cyan Stereo:![Rot-Cyan Stereo] (redcyan43.png "Rot-Cyan Stereo")
 
-In allen Anwendungen können wir zwischen einem Fenster und Fullscreen wechseln.
+

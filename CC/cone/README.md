@@ -1,2 +1,2 @@
-# Model
-Dieses Beispiel zeigt die Verwendung von mehreren Renderern und Viewports für eine Szene.
+# cone
+Einfaches Beispiel - ein Kegel in einem Fenster. Das Fenster kann mit q/Q geschlossen werden.

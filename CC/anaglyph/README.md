@@ -1,24 +1,24 @@
 # anaglyph
-Beispiele für die Verwendung von Anaglyphen-Stereo.
+Beispiele fÃ¼r die Verwendung von Anaglyphen-Stereo.
 
-Das Beispiel redblue.cpp verwendet rot-blau-Stereo, wofür es in VTKRenderWindow eine
+Das Beispiel redblue.cpp verwendet rot-blau-Stereo, wofÃ¼r es in VTKRenderWindow eine
 Funktion gibt.
 
 Der Default, wenn man SetStereoTypeToAnaglyph() verwendet ist rot-cyan. 
 Dieser Default wird in redcyan.cpp verwendet.
 
-Wird SetStereoTypeToAnaglyph() verwendet kann man die color mask verändern.
+Wird SetStereoTypeToAnaglyph() verwendet kann man die color mask verÃ¤ndern.
 Dies wird im Beispiel colormask.cpp eingesetzt. Die Interpretation der beiden
 integer-Werte ist im Kommentar von colormask.cpp zu finden. rot-cyan entspricht
-den beiden Werte (4,3) (die erste Zahl steht immer für das linke Auge, 4 entspricht rot).
-Mit (4,1) erhält man rot-blau, und (4,2) ergibt rot-grün-Stereo.
+den beiden Werte (4,3) (die erste Zahl steht immer fÃ¼r das linke Auge, 4 entspricht rot).
+Mit (4,1) erhÃ¤lt man rot-blau, und (4,2) ergibt rot-grÃ¼n-Stereo.
 
 Im Verzeichnis liegen Screen-Captures des Ergebnisses. Die Szene ist einfach, wir stellen
-in einem Fenster mit einem Hintergrund vn 90%-Grau einen Würfel dar, der weiß eingefärbt ist.
+in einem Fenster mit einem Hintergrund von 90%-Grau einen WÃ¼rfel dar, der weiÃŸ eingefÃ¤rbt ist.
 
 Ohne Stereo:![Ergebnis ohne Stereo] (mono.png "Ohne Stereo")
 Rot-Blau Stereo:![Rot-Blau Stereo] (redblue41.png "Rot-Blau Stereo")
-Rot-Grün Stereo:![Rot-Grün Stereo] (redgreen42.png "Rot-Grün Stereo")
+Rot-GrÃ¼n Stereo:![Rot-GrÃ¼n Stereo] (redgreen42.png "Rot-GrÃ¼n Stereo")
 Rot-Cyan Stereo:![Rot-Cyan Stereo] (redcyan43.png "Rot-Cyan Stereo")
 
-In allen Anwendungen können wir zwischen einem Fenster und Fullscreen wechseln.
+In allen Anwendungen kÃ¶nnen wir zwischen einem Fenster und Fullscreen wechseln.

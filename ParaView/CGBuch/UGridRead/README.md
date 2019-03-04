@@ -1,7 +1,5 @@
 # Die Visualisierungspipeline in VTK - Fallstudie 6.7.1
 
-- Sie benötigen CMake, das Installationsverzeichnis von VTK muss als Umgebungsvariable
-VTK_DIR gesetzt sein und die shared objects (dll bzw. so) müssen im Suchpfad während der Ausführung
-gefunden werden.
-- Getestet unter Win10, VS 2017 Community Edition und VTK 8.2
+- ParaView State für das Beispiel
+- Getestet unter Win10, ParaView 5.2
 

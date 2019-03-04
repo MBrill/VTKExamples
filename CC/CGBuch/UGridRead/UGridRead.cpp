@@ -52,10 +52,10 @@ vtkSmartPointer<vtkRenderer> ren = vtkSmartPointer<vtkRenderer>::New();
    ren->SetBackground(1.0, 1.0, 1.0);
    ren->AddActor(actor);
    //ren->GetActiveCamera()->SetViewUp(0.0, -1.0, 0.0);
-   //ren->ResetCamera();
 
 vtkSmartPointer<vtkRenderWindow> renWin = vtkSmartPointer<vtkRenderWindow>::New();
   renWin->AddRenderer(ren);
+  renWin->SetPosition(100, 100);
   renWin->SetSize(800, 450);
 
 vtkSmartPointer<vtkRenderWindowInteractor> iren = vtkSmartPointer<vtkRenderWindowInteractor>::New();

@@ -34,7 +34,7 @@ if(CYGWIN)
 endif()
 
 # -----------------------------------------------------------------------
-# Falls VTKRoot nicht gefunden wird, manuell angeben
+# Falls VTK_DIR nicht gefunden wird, manuell angeben
 # -----------------------------------------------------------------------
 set (VTK_DIR "c:/Program Files/VTK/" CACHE STRING "VTK Verzeichnis")
 FIND_PACKAGE(VTK REQUIRED)

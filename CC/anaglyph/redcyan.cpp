@@ -27,7 +27,7 @@ int main (void)
     renWindow->SetSize(800, 450);
     renWindow->SetPosition(200, 100);
     // Fullscreen starten, falls die nächste Zeile nicht kommentiert wird
-    //renWindow->SetFullScreen(true);
+    renWindow->SetFullScreen(true);
     // Stereo-Eigenschaften einstellen
 	renWindow->StereoCapableWindowOn();
 	renWindow->SetStereoTypeToAnaglyph();

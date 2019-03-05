@@ -44,6 +44,7 @@ int main(void)
 	renWindow->StereoCapableWindowOn();
 	renWindow->SetStereoTypeToAnaglyph();
 	renWindow->SetAnaglyphColorMask(redgreen);
+	renWindow->SetStereoTypeToSplitViewportHorizontal();
 	//renWindow->SetAnaglyphColorMask(redcyan);
 	//renWindow->SetAnaglyphColorMask(redblue);
 	renWindow->SetStereoRender(true);

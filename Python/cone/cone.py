@@ -2,7 +2,6 @@
 #    python cone.py
 import vtk
 
-
 coneSource = vtk.vtkConeSource()
 # coneSource.SetResolution(60)
 # coneSource.SetCenter(-2,0,0)

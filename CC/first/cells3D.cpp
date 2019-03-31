@@ -37,7 +37,6 @@ int main( int argc, char *argv[] )
 
 
    vtkSmartPointer<vtkPolyDataMapper> mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-   mapper->SetInputConnection(red->GetOutputPort());
 
    vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
    actor->SetMapper(mapper);
@@ -52,7 +51,6 @@ int main( int argc, char *argv[] )
   renderWindowInteractor->SetRenderWindow(renderWindow);
 
   renderer->AddActor(actor);
-  renderer->SetBackground(.3, .6, .3); // Background color green
 
   renderWindow->Render();
   renderWindowInteractor->Start();

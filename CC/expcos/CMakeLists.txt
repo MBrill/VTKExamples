@@ -13,10 +13,10 @@ SET(CMAKE_BUILD_TYPE Release CACHE STRING
       "Nur Release"
       FORCE)
 
-# Für Visual Studio (ein "multi-target IDE" muss die folgende Variable verändert werden
+# Fï¿½r Visual Studio (ein "multi-target IDE" muss die folgende Variable verï¿½ndert werden
 set(CMAKE_CONFIGURATION_TYPES "Release" CACHE STRING "Nur Release" FORCE)
 
-# Compiler-Einstellungen für Microsoft Visual Studio
+# Compiler-Einstellungen fï¿½r Microsoft Visual Studio
 if(MSVC)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_definitions(-D_USE_MATH_DEFINES -DGLUT_BUILDING_LIB)
@@ -28,7 +28,7 @@ if(NOT APPLE)
     set(CMAKE_USE_RELATIVE_PATHS TRUE CACHE STRING "Relative Pfade")
 endif(NOT APPLE)
 
-# Option für Gcc unter Cygwin
+# Option fï¿½r Gcc unter Cygwin
 if(CYGWIN)
     add_definitions(-mwin32)
 endif()
@@ -45,7 +45,7 @@ IF(VTK_FOUND)
   include(${VTK_USE_FILE})
 
   # Das Build-Target festlegen
-  ADD_EXECUTABLE(expcos expcos.cpp)
+  ADD_EXECUTABLE(expcos expCos.cpp)
   TARGET_LINK_LIBRARIES(expcos ${VTK_LIBRARIES})
 ELSE(VTK_FOUND)
 	message(FATAL_ERROR "Binary kann ohne VTK nicht gebaut werden! Setzen Sie die Variable VTK_DIR als Umgebungsvariable oder in der CMake-Eingabe!")

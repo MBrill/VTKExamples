@@ -9,7 +9,7 @@
 #include "vtkPolyData.h"
 #include "vtkPointData.h"
 #include "vtkRenderWindow.h"
-#include "vtkRenderWindowInterActor.h"
+#include "vtkRenderWindowInteractor.h"
 #include "vtkInteractorStyleTrackballCamera.h"
 #include "vtkRenderer.h"
 #include "vtkTransform.h"
@@ -22,11 +22,11 @@ int main( int argc, char *argv[] )
   double x[3];
   double r, deriv;
 
-  // Ebene, die wir verformen können mit einer großen Auflösung
+  // Ebene, die wir verformen kï¿½nnen mit einer groï¿½en Auflï¿½sung
   vtkSmartPointer<vtkPlaneSource> plane = vtkSmartPointer<vtkPlaneSource>::New();
          plane->SetResolution (300,300);
 
-  // Skalierung für die Größe der Ebene
+  // Skalierung fï¿½r die Grï¿½ï¿½e der Ebene
   vtkSmartPointer<vtkTransform> transform = vtkSmartPointer<vtkTransform>::New();
          transform->Scale(10.0,10.0,1.0);
 
@@ -62,7 +62,7 @@ int main( int argc, char *argv[] )
        bessel->GetPointData()->SetScalars(derivs);
 
 
-  // Punkte und Ableitungswerte schonmal löschen
+  // Punkte und Ableitungswerte schonmal lï¿½schen
   // VTK macht reference counting - da kann nichts passieren :-)
   newPts->Delete(); 
   derivs->Delete();
@@ -91,7 +91,7 @@ int main( int argc, char *argv[] )
 	   renWin->SetSize(1280, 768);
 	   renWin->SetPosition(100, 100);
 	   renWin->Render();
-	   // Wir wählen einen Stil aus und verwenden nicht den Default
+	   // Wir wï¿½hlen einen Stil aus und verwenden nicht den Default
 	   vtkSmartPointer<vtkInteractorStyleTrackballCamera> style =
 		   vtkSmartPointer<vtkInteractorStyleTrackballCamera>::New();
 

@@ -19,29 +19,55 @@ int main(int, char *[])
     vtkSmartPointer<vtkSphereSource>::New();
   red->SetRadius(0.5);
   red->SetCenter(0.0,0.0,0.0);
-  red->Update();
+  red->SetPhiResolution(64);
+  red->SetThetaResolution(64);
+  //red->Update();
 
   vtkSmartPointer<vtkSphereSource> yellow = 
     vtkSmartPointer<vtkSphereSource>::New();
   yellow->SetRadius(0.5);
   yellow->SetCenter(10.0,0.0,0.0);
+  yellow->SetPhiResolution(64);
+  yellow->SetThetaResolution(64);
+  //yellow->Update();
   
   //Create a mapper and actor
-  size_t size = 10;
+  //size_t size = 10;
   std::vector<vtkSmartPointer<vtkPolyDataMapper>> mappers;
   mappers.push_back(vtkSmartPointer<vtkPolyDataMapper>::New());
   mappers[0]->SetInputConnection(red->GetOutputPort());
   mappers.push_back(vtkSmartPointer<vtkPolyDataMapper>::New());
   mappers[1]->SetInputConnection(yellow->GetOutputPort());
-  std::vector<vtkSmartPointer<vtkActor>> actors(size, vtkSmartPointer<vtkActor>::New()); 
-  actors[0]->SetMapper(mappers[0]);
-  actors[1]->SetMapper(mappers[1]);
-  
-  //Set the color of the sphere
-  actors[0]->GetProperty()->SetColor(1.0, 0.0, 0.0); //(R,G,B)
-  actors[1]->GetProperty()->SetColor(1.0, 1.0, 0.0); //(R,G,B)
+
+  /*vtkSmartPointer<vtkPolyDataMapper> redMapper =
+	  vtkSmartPointer<vtkPolyDataMapper>::New();
+      redMapper->SetInputConnection(red->GetOutputPort());*/
+
+  vtkSmartPointer<vtkActor> redActor =
+	  vtkSmartPointer<vtkActor>::New();
+      //redActor->SetMapper(redMapper);
+      redActor->SetMapper(mappers[0]);
+	  redActor->GetProperty()->SetColor(1.0, 0.0, 0.0);
+
+  /*vtkSmartPointer<vtkPolyDataMapper> yellowMapper =
+		  vtkSmartPointer<vtkPolyDataMapper>::New();
+  yellowMapper->SetInputConnection(yellow->GetOutputPort());*/
+
+  vtkSmartPointer<vtkActor> yellowActor =
+		  vtkSmartPointer<vtkActor>::New();
+      //yellowActor->SetMapper(yellowMapper);
+	  yellowActor->SetMapper(mappers[1]);
+      yellowActor->GetProperty()->SetColor(1.0, 1.0, 0.0);
+
   //Create a renderer, render window, and interactor
   vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
+
+  //Add the actor to the scene
+  //renderer->AddActor(actors[0]);
+  //renderer->AddActor(actors[1]);
+  renderer->AddActor(redActor);
+  renderer->AddActor(yellowActor);
+  renderer->SetBackground(1, 1, 1);
   vtkSmartPointer<vtkRenderWindow> renderWindow = 
     vtkSmartPointer<vtkRenderWindow>::New();
   renderWindow->AddRenderer(renderer);
@@ -50,13 +76,6 @@ int main(int, char *[])
   vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor = 
     vtkSmartPointer<vtkRenderWindowInteractor>::New();
   renderWindowInteractor->SetRenderWindow(renderWindow);
- 
-  //Add the actor to the scene
-  renderer->AddActor(actors[0]);
-  renderer->AddActor(actors[1]);
-  renderer->SetBackground(1,1,1); 
-  
- 
  
   //Render and interact
   renderWindow->Render();

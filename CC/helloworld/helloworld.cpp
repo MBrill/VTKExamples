@@ -1,6 +1,6 @@
 #include <vtkSphereSource.h>
 #include <vtkCubeSource.h>
-#include <vtkQuad.h>
+#include <vtkPlaneSource.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkPolyDataMapper.h>
@@ -15,45 +15,22 @@
 #include <vector>
 #include <vtkCellArray.h>
 #include <vtkPoints.h>
-#include <vtkQuad.h>
+#include <vtkNamedColors.h>
+#include <vtkColor.h>
  
 int main(int, char *[])
 {
+  //Farben
+  vtkSmartPointer<vtkNamedColors> colors =
+  vtkSmartPointer<vtkNamedColors>::New();
+
 	//Ebene
-	// Create four points (must be in counter clockwise order)
-	double p0[3] = { -5.0, 0.0, 5.0 };
-	double p1[3] = { -5.0, 0.0, -5.0 };
-	double p2[3] = { 5.0, 0.0, -5.0 };
-	double p3[3] = { 5.0, 0.0, 5.0 };
-
-	// Add the points to a vtkPoints object
-	vtkSmartPointer<vtkPoints> points =
-		vtkSmartPointer<vtkPoints>::New();
-	points->InsertNextPoint(p0);
-	points->InsertNextPoint(p1);
-	points->InsertNextPoint(p2);
-	points->InsertNextPoint(p3);
-
-	// Create a quad on the four points
-	vtkSmartPointer<vtkQuad> quad =
-		vtkSmartPointer<vtkQuad>::New();
-	quad->GetPointIds()->SetId(0, 0);
-	quad->GetPointIds()->SetId(1, 1);
-	quad->GetPointIds()->SetId(2, 2);
-	quad->GetPointIds()->SetId(3, 3);
-
-	// Create a cell array to store the quad in
-	vtkSmartPointer<vtkCellArray> quads =
-		vtkSmartPointer<vtkCellArray>::New();
-	quads->InsertNextCell(quad);
-
-	// Create a polydata to store everything in
-	vtkSmartPointer<vtkPolyData> polydata =
-		vtkSmartPointer<vtkPolyData>::New();
-
-	// Add the points and quads to the dataset
-	polydata->SetPoints(points);
-	polydata->SetPolys(quads);
+  vtkSmartPointer<vtkPlaneSource> ebene =
+    vtkSmartPointer<vtkPlaneSource>::New();
+  ebene->SetOrigin(-5.0,0.0,-5.0);
+  ebene->SetPoint1(-5.0,0.0,5.0);
+  ebene->SetPoint2(5.0,0.0,-5.0);
+  ebene->Update();
 
 	//Ursprung
 	vtkSmartPointer<vtkCubeSource> Ursprung =
@@ -138,44 +115,44 @@ int main(int, char *[])
   mappers.push_back(vtkSmartPointer<vtkPolyDataMapper>::New());
   mappers[7]->SetInputConnection(zAchse->GetOutputPort());
   mappers.push_back(vtkSmartPointer<vtkPolyDataMapper>::New());
-  mappers[8]->SetInputData(polydata);
+  mappers[8]->SetInputConnection(ebene->GetOutputPort());
 
   vtkSmartPointer<vtkActor> KugelVorneActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelVorneActor->SetMapper(mappers[0]);
-  KugelVorneActor->GetProperty()->SetColor(1.0, 0.0, 0.0);
+  KugelVorneActor->GetProperty()->SetColor(colors->GetColor3d("red").GetData());
   vtkSmartPointer<vtkActor> KugelHintenActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelHintenActor->SetMapper(mappers[1]);
-  KugelHintenActor->GetProperty()->SetColor(1.0, 0.0, 0.0);
+  KugelHintenActor->GetProperty()->SetColor(colors->GetColor3d("red").GetData());
   vtkSmartPointer<vtkActor> KugelRechtsActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelRechtsActor->SetMapper(mappers[2]);
-  KugelRechtsActor->GetProperty()->SetColor(0.0, 0.0, 1.0);
+  KugelRechtsActor->GetProperty()->SetColor(colors->GetColor3d("blue").GetData());
   vtkSmartPointer<vtkActor> KugelLinksActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelLinksActor->SetMapper(mappers[3]);
-  KugelLinksActor->GetProperty()->SetColor(0.0, 0.0, 1.0);
+  KugelLinksActor->GetProperty()->SetColor(colors->GetColor3d("blue").GetData());
   vtkSmartPointer<vtkActor> UrsprungActor =
 	  vtkSmartPointer<vtkActor>::New();
   UrsprungActor->SetMapper(mappers[4]);
-  UrsprungActor->GetProperty()->SetColor(200.0, 200.0, 200.0);
+  UrsprungActor->GetProperty()->SetColor(colors->GetColor3d("white").GetData());
   vtkSmartPointer<vtkActor> xAchseActor =
 	  vtkSmartPointer<vtkActor>::New();
   xAchseActor->SetMapper(mappers[5]);
-  xAchseActor->GetProperty()->SetColor(1.0, 0.0, 0.0);
+  xAchseActor->GetProperty()->SetColor(colors->GetColor3d("red").GetData());
   vtkSmartPointer<vtkActor> yAchseActor =
 	  vtkSmartPointer<vtkActor>::New();
   yAchseActor->SetMapper(mappers[6]);
-  yAchseActor->GetProperty()->SetColor(0.0, 1.0, 0.0);
+  yAchseActor->GetProperty()->SetColor(colors->GetColor3d("green").GetData());
   vtkSmartPointer<vtkActor> zAchseActor =
 	  vtkSmartPointer<vtkActor>::New();
   zAchseActor->SetMapper(mappers[7]);
-  zAchseActor->GetProperty()->SetColor(0.0, 0.0, 1.0);
-  vtkSmartPointer<vtkActor> quadsActor =
+  zAchseActor->GetProperty()->SetColor(colors->GetColor3d("blue").GetData());
+  vtkSmartPointer<vtkActor> ebeneActor =
 	  vtkSmartPointer<vtkActor>::New();
-  quadsActor->SetMapper(mappers[8]);
-  quadsActor->GetProperty()->SetColor(100.0, 100.0, 100.0);
+  ebeneActor->SetMapper(mappers[8]);
+  ebeneActor->GetProperty()->SetColor(colors->GetColor3d("grey").GetData());
 
   //Create a renderer, render window, and interactor
   vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
@@ -189,12 +166,12 @@ int main(int, char *[])
   renderer->AddActor(xAchseActor);
   renderer->AddActor(yAchseActor);
   renderer->AddActor(zAchseActor);
-  renderer->AddActor(quadsActor);
-  renderer->SetBackground(1, 1, 1);
+  renderer->AddActor(ebeneActor);
+  renderer->SetBackground(colors->GetColor3d("white").GetData());
   vtkSmartPointer<vtkRenderWindow> renderWindow = 
     vtkSmartPointer<vtkRenderWindow>::New();
   renderWindow->AddRenderer(renderer);
-  renderWindow->SetWindowName("TEST");
+  renderWindow->SetWindowName("Helloworld");
   renderWindow->SetSize(800,640);
   vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor = 
     vtkSmartPointer<vtkRenderWindowInteractor>::New();

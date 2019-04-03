@@ -1,6 +1,6 @@
-// --------------------------------------------------------------------------------------
-//   VTK Beispiel mit drei Renderern, zwei Fenstern und zwei Viewports
-// --------------------------------------------------------------------------------------
+/*
+ * Beispiel mit drei Renderern, zwei Fenstern und zwei Viewports
+ */
 #include "vtkRenderer.h"
 #include "vtkRenderWindow.h"
 #include "vtkRenderWindowInteractor.h"
@@ -34,7 +34,7 @@ int main (void)
   vtkSmartPointer<vtkRenderWindowInteractor> iren2 = vtkSmartPointer<vtkRenderWindowInteractor>::New();
     iren2->SetRenderWindow(renWindow2);
 
-  // Einen Actor mit einem Kegel erzeugen
+  // Einen Kegel, den Mapper und einen erzeugen
   vtkSmartPointer<vtkConeSource> cone = vtkSmartPointer<vtkConeSource>::New();
      cone->SetResolution(8);
   vtkSmartPointer<vtkPolyDataMapper> coneMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
@@ -43,7 +43,7 @@ int main (void)
     coneActor->SetMapper(coneMapper);
     coneActor->GetProperty()->SetColor(0.2000,0.6300,0.7900);
 
-  // Einen Actor mit einem Würfel erzeugen
+  // Einen Würfel, Mapper und Actor erzeugen
   vtkSmartPointer<vtkCubeSource> cube = vtkSmartPointer<vtkCubeSource>::New();
   vtkSmartPointer<vtkPolyDataMapper> cubeMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
     cubeMapper->SetInputConnection(cube->GetOutputPort());
@@ -51,7 +51,7 @@ int main (void)
     cubeActor->SetMapper(cubeMapper);
     cubeActor->GetProperty()->SetColor(0.9804,0.5020,0.4471);
 
-  // Einen Actor erzeugen mit einer Kugel erzeugen
+  // Kugel, Mapper und Actor erzeugen
   vtkSmartPointer<vtkSphereSource> sphere = vtkSmartPointer<vtkSphereSource>::New();
     sphere->SetThetaResolution(16); 
 	sphere->SetPhiResolution(16);
@@ -100,5 +100,5 @@ int main (void)
   sphereMapper->Delete();
   sphereActor->Delete();
 
-  return 0;
+  return EXIT_SUCCESS;
 }

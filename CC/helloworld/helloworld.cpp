@@ -124,7 +124,7 @@ int main(int, char *[])
   vtkSmartPointer<vtkActor> KugelHintenActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelHintenActor->SetMapper(mappers[1]);
-  KugelHintenActor->GetProperty()->SetColor(colors->GetColor3d("red").GetData());
+  KugelHintenActor->GetProperty()->SetColor(colors->GetColor3d("yellow").GetData());
   vtkSmartPointer<vtkActor> KugelRechtsActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelRechtsActor->SetMapper(mappers[2]);
@@ -132,7 +132,7 @@ int main(int, char *[])
   vtkSmartPointer<vtkActor> KugelLinksActor =
 	  vtkSmartPointer<vtkActor>::New();
   KugelLinksActor->SetMapper(mappers[3]);
-  KugelLinksActor->GetProperty()->SetColor(colors->GetColor3d("blue").GetData());
+  KugelLinksActor->GetProperty()->SetColor(colors->GetColor3d("yellow").GetData());
   vtkSmartPointer<vtkActor> UrsprungActor =
 	  vtkSmartPointer<vtkActor>::New();
   UrsprungActor->SetMapper(mappers[4]);

@@ -1,3 +1,9 @@
+/*
+ * Erstes "Hello-World" für die Verwendung von VTK.
+ * Wir erzeugen einen Kegel und stellen diesen
+ * in einem OpenGL-Fenster dar.
+ * Entspricht dem VTK-Beispiel "Cone".
+ */
 #include <vtkConeSource.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -7,10 +13,6 @@
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
 
-/*
- * Kegel erzeugen und interaktiv anzeigen.
- * Entspricht dem VTK-Beispiel "Cone".
- */
 int main(int, char *[])
 {
   // Kegel erzeugen

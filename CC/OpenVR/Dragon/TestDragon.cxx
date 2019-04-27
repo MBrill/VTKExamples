@@ -22,8 +22,6 @@
 #include "vtkNew.h"
 #include "vtkProperty.h"
 
-#include "vtkRegressionTestImage.h"
-#include "vtkTestUtilities.h"
 
 #include "vtkRenderWindowInteractor.h"
 

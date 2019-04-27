@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------
 #  Erste eigene VTK-Anwendung
 # ----------------------------------------------------------------------
-PROJECT(FIRSTVTK)
+PROJECT(CELLS3D)
 cmake_minimum_required(VERSION 3.13)
 
 # Mehr Ausgaben ...

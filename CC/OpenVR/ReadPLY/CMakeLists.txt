@@ -1,33 +1,52 @@
+# ----------------------------------------------------------------------
+#  Erste eigene VTK-Anwendung
+# ----------------------------------------------------------------------
+PROJECT(ReadPLY)
+cmake_minimum_required(VERSION 3.13)
 
-cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
+# Mehr Ausgaben ...
+if(NOT CMAKE_VERBOSE_MAKEFILE)
+   set(CMAKE_VERBOSE_MAKEFILE TRUE CACHE STRING "Mehr Ausgaben")
+ENDIF(NOT CMAKE_VERBOSE_MAKEFILE)
 
-project(ReadPLY)
+SET(CMAKE_BUILD_TYPE Release CACHE STRING
+      "Nur Release"
+      FORCE)
 
-find_package(VTK COMPONENTS 
-  vtkCommonCore
-  vtkCommonDataModel
-  vtkIOPLY
-  vtkInteractionStyle
-  vtkRenderingCore
-  vtkRenderingFreeType
-  vtkRenderingOpenGL2 QUIET)
-if (NOT VTK_FOUND)
-  message("Skipping ReadPLY: ${VTK_NOT_FOUND_MESSAGE}")
-  return ()
+# Fr Visual Studio (ein "multi-target IDE" muss die folgende Variable verndert werden
+set(CMAKE_CONFIGURATION_TYPES "Release" CACHE STRING "Nur Release" FORCE)
+
+# Compiler-Einstellungen fr Microsoft Visual Studio
+if(MSVC)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+    add_definitions(-D_USE_MATH_DEFINES -DGLUT_BUILDING_LIB)
 endif()
-message (STATUS "VTK_VERSION: ${VTK_VERSION}")
-if (VTK_VERSION VERSION_LESS "8.90.0")
-  # old system
+
+# XCode arbeitet scheinbar nicht mit relativen Pfadangaben
+if(NOT APPLE) 
+    # Use relative paths
+    set(CMAKE_USE_RELATIVE_PATHS TRUE CACHE STRING "Relative Pfade")
+endif(NOT APPLE)
+
+# Option fr Gcc unter Cygwin
+if(CYGWIN)
+    add_definitions(-mwin32)
+endif()
+
+# -----------------------------------------------------------------------
+# Falls VTK_DIR nicht gefunden wird, manuell angeben
+# -----------------------------------------------------------------------
+set (VTK_DIR "c:/Program Files/VTK/" CACHE STRING "VTK Verzeichnis")
+FIND_PACKAGE(VTK REQUIRED)
+
+# Falls VTK gefunden wurde Variablen schicken
+IF(VTK_FOUND)
+  message(STATUS "VTK gefunden. Version: " ${VTK_VERSION} " " VTK_DIR: ${VTK_DIR})
   include(${VTK_USE_FILE})
-  add_executable(ReadPLY MACOSX_BUNDLE ReadPLY.cxx )
-  target_link_libraries(ReadPLY PRIVATE ${VTK_LIBRARIES})
-else ()
-  # include all components
-  add_executable(ReadPLY MACOSX_BUNDLE ReadPLY.cxx )
-  target_link_libraries(ReadPLY PRIVATE ${VTK_LIBRARIES})
-  # vtk_module_autoinit is needed
-  vtk_module_autoinit(
-    TARGETS ReadPLY
-    MODULES ${VTK_LIBRARIES}
-    )
-endif () 
+
+  # Das Build-Target festlegen
+  ADD_EXECUTABLE(ReadPLY ReadPLY.cxx)
+  TARGET_LINK_LIBRARIES(ReadPLY ${VTK_LIBRARIES})
+ELSE(VTK_FOUND)
+	message(FATAL_ERROR "Binary kann ohne VTK nicht gebaut werden! Setzen Sie die Variable VTK_DIR als Umgebungsvariable oder in der CMake-Eingabe!")
+ENDIF(VTK_FOUND)

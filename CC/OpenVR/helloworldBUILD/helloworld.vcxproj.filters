@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\VTK\VTKExamples\CC\OpenVR\DEMReader\DEMReader.cxx">
+    <ClCompile Include="D:\VTK\VTKExamples\CC\OpenVR\helloworld\helloworld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\VTK\VTKExamples\CC\OpenVR\DEMReader\CMakeLists.txt" />
+    <CustomBuild Include="D:\VTK\VTKExamples\CC\OpenVR\helloworld\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{FAD2E069-DD79-3F0A-8FD0-D4D5C0D1ADC8}</UniqueIdentifier>
+      <UniqueIdentifier>{B41EC838-0B12-3965-9B2F-135606895C00}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

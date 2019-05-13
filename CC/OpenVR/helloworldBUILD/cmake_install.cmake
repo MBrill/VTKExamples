@@ -1,8 +1,8 @@
-# Install script for directory: D:/VTK/VTKExamples/CC/OpenVR/DEMReader
+# Install script for directory: D:/VTK/VTKExamples/CC/OpenVR/helloworld
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/DEMReader")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/HELLOWORLDVTK")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/VTK/VTKExamples/CC/OpenVR/DEMReaderBUILD/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/VTK/VTKExamples/CC/OpenVR/helloworldBUILD/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

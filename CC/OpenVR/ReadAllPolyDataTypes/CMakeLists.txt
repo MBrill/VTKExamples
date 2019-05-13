@@ -1,8 +1,8 @@
-# ----------------------------------------------------------------------
+﻿# ----------------------------------------------------------------------
 #  Erste eigene VTK-Anwendung
 # ----------------------------------------------------------------------
 PROJECT(ReadAllPolyDataTypes)
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.13)
 
 # Mehr Ausgaben ...
 if(NOT CMAKE_VERBOSE_MAKEFILE)
@@ -36,7 +36,7 @@ endif()
 # -----------------------------------------------------------------------
 # Falls VTK_DIR nicht gefunden wird, manuell angeben
 # -----------------------------------------------------------------------
-set (VTK_DIR "c:/Program Files/VTK/" CACHE STRING "VTK Verzeichnis")
+set (VTK_DIR "D:/Program Files/VTK/" CACHE STRING "VTK Verzeichnis")
 FIND_PACKAGE(VTK REQUIRED)
 
 # Falls VTK gefunden wurde Variablen schicken

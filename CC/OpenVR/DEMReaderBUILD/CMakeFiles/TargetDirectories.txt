@@ -1,3 +1,0 @@
-D:/VTK/VTKExamples/CC/OpenVR/DEMReaderBUILD/CMakeFiles/DEMReader.dir
-D:/VTK/VTKExamples/CC/OpenVR/DEMReaderBUILD/CMakeFiles/ALL_BUILD.dir
-D:/VTK/VTKExamples/CC/OpenVR/DEMReaderBUILD/CMakeFiles/ZERO_CHECK.dir

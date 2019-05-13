@@ -147,8 +147,8 @@ D:/Program Files/VTK/lib/cmake/vtk-8.2/VTKConfigVersion.cmake
 D:/Program Files/VTK/lib/cmake/vtk-8.2/VTKTargets-release.cmake
 D:/Program Files/VTK/lib/cmake/vtk-8.2/VTKTargets.cmake
 D:/Program Files/VTK/lib/cmake/vtk-8.2/vtkModuleAPI.cmake
-D:/VTK/VTKExamples/CC/OpenVR/ReadPLY/CMakeLists.txt
-D:/VTK/VTKExamples/CC/OpenVR/ReadPLYBUILD/CMakeFiles/3.13.4/CMakeCCompiler.cmake
-D:/VTK/VTKExamples/CC/OpenVR/ReadPLYBUILD/CMakeFiles/3.13.4/CMakeCXXCompiler.cmake
-D:/VTK/VTKExamples/CC/OpenVR/ReadPLYBUILD/CMakeFiles/3.13.4/CMakeRCCompiler.cmake
-D:/VTK/VTKExamples/CC/OpenVR/ReadPLYBUILD/CMakeFiles/3.13.4/CMakeSystem.cmake
+D:/VTK/VTKExamples/CC/OpenVR/helloworld/CMakeLists.txt
+D:/VTK/VTKExamples/CC/OpenVR/helloworldBUILD/CMakeFiles/3.13.4/CMakeCCompiler.cmake
+D:/VTK/VTKExamples/CC/OpenVR/helloworldBUILD/CMakeFiles/3.13.4/CMakeCXXCompiler.cmake
+D:/VTK/VTKExamples/CC/OpenVR/helloworldBUILD/CMakeFiles/3.13.4/CMakeRCCompiler.cmake
+D:/VTK/VTKExamples/CC/OpenVR/helloworldBUILD/CMakeFiles/3.13.4/CMakeSystem.cmake

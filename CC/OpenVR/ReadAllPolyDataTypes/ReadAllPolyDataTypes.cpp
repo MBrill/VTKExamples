@@ -70,6 +70,7 @@ int main(int argc, char *argv[]) {
     backProp->SetSpecularPower(30);
 
     auto actor = vtkSmartPointer<vtkActor>::New();
+    actor->SetPosition(0.0,0.0,0.0);
     actor->SetMapper(mapper);
     actor->SetBackfaceProperty(backProp);
     actor->GetProperty()->SetDiffuseColor(randomColor.data());

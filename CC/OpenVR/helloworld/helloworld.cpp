@@ -18,7 +18,10 @@
 #include <vtkPoints.h>
 #include <vtkNamedColors.h>
 #include <vtkColor.h>
+<<<<<<< HEAD
 #include <vtkOpenVRInteractorStyle.h>
+=======
+>>>>>>> f7d2f3acf11a6d912401dd25766405be530e3787
 
  
 int main(int, char *[])
@@ -179,7 +182,10 @@ int main(int, char *[])
   vtkSmartPointer<vtkOpenVRRenderWindowInteractor> renderWindowInteractor = 
     vtkSmartPointer<vtkOpenVRRenderWindowInteractor>::New();
   renderWindowInteractor->SetRenderWindow(renderWindow);
+<<<<<<< HEAD
   renderWindowInteractor->SetInteractorStyle(vtkSmartPointer<vtkOpenVRInter>::New());
+=======
+>>>>>>> f7d2f3acf11a6d912401dd25766405be530e3787
   vtkSmartPointer<vtkOpenVRCamera> cam = 
     vtkSmartPointer<vtkOpenVRCamera>::New();
   renderer->SetActiveCamera(cam);

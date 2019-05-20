@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\VTK\VTKExamples\CC\OpenVR\DiscreteMarchingCubes\DiscreteMarchingCubes.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\VTK\VTKExamples\CC\OpenVR\DiscreteMarchingCubes\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AC4627B3-9615-3ECB-BBB2-9889A1D6892B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

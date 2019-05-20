@@ -201,6 +201,10 @@ int main(int argc, char* argv[])
   ren->GetActiveCamera()->SetPosition(-2.3, 4.1, 4.2);
   ren->GetActiveCamera()->SetViewUp(0.0, 0.0, 1.0);
   ren->ResetCameraClippingRange();
+
+  auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
+  ren->SetActiveCamera(cam);
+
   renWin->Render();
   //  Call SetWindowName after renWin.Render() is called.
   renWin->SetWindowName("Anatomical Orientation");

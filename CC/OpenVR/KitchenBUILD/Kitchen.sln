@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{02E73A56-2D8F-3F36-8AE0-21EFB3B1C452}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D7A2B46-1A83-3B86-AF02-FDF6E6A25264} = {4D7A2B46-1A83-3B86-AF02-FDF6E6A25264}
+		{1553C20A-2631-30CB-AE27-792D8F523627} = {1553C20A-2631-30CB-AE27-792D8F523627}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kitchen", "Kitchen.vcxproj", "{4D7A2B46-1A83-3B86-AF02-FDF6E6A25264}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1553C20A-2631-30CB-AE27-792D8F523627} = {1553C20A-2631-30CB-AE27-792D8F523627}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{1553C20A-2631-30CB-AE27-792D8F523627}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02E73A56-2D8F-3F36-8AE0-21EFB3B1C452}.Release|x64.ActiveCfg = Release|x64
+		{4D7A2B46-1A83-3B86-AF02-FDF6E6A25264}.Release|x64.ActiveCfg = Release|x64
+		{4D7A2B46-1A83-3B86-AF02-FDF6E6A25264}.Release|x64.Build.0 = Release|x64
+		{1553C20A-2631-30CB-AE27-792D8F523627}.Release|x64.ActiveCfg = Release|x64
+		{1553C20A-2631-30CB-AE27-792D8F523627}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63469B9E-6EEE-3EF7-A5AD-AF8C1C77816D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

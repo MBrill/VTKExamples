@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{750DED59-7DB5-3AEE-B5F7-750E46BA6202}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5B8E62B-F0A2-3465-B480-B08F55D56B7C} = {B5B8E62B-F0A2-3465-B480-B08F55D56B7C}
+		{E31073ED-7531-3BEF-96CE-4D8F8D83CBFC} = {E31073ED-7531-3BEF-96CE-4D8F8D83CBFC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DEMReader", "DEMReader.vcxproj", "{B5B8E62B-F0A2-3465-B480-B08F55D56B7C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E31073ED-7531-3BEF-96CE-4D8F8D83CBFC} = {E31073ED-7531-3BEF-96CE-4D8F8D83CBFC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{E31073ED-7531-3BEF-96CE-4D8F8D83CBFC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{750DED59-7DB5-3AEE-B5F7-750E46BA6202}.Release|x64.ActiveCfg = Release|x64
+		{B5B8E62B-F0A2-3465-B480-B08F55D56B7C}.Release|x64.ActiveCfg = Release|x64
+		{B5B8E62B-F0A2-3465-B480-B08F55D56B7C}.Release|x64.Build.0 = Release|x64
+		{E31073ED-7531-3BEF-96CE-4D8F8D83CBFC}.Release|x64.ActiveCfg = Release|x64
+		{E31073ED-7531-3BEF-96CE-4D8F8D83CBFC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8DE881F-2696-3C0C-8E81-EC6E37306907}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

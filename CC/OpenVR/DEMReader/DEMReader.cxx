@@ -48,6 +48,8 @@ int main(int argc, char* argv[])
   vtkSmartPointer<vtkOpenVRRenderer> renderer =
     vtkSmartPointer<vtkOpenVRRenderer>::New();
   renderer->AddActor(actor);
+  auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
+  renderer->SetActiveCamera(cam);
   renderer->ResetCamera();
 
   // Setup render window
@@ -64,8 +66,6 @@ int main(int argc, char* argv[])
   renderWindowInteractor->SetInteractorStyle(style);
 
   // Render and start interaction
-  auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
-  renderer->SetActiveCamera(cam);
 
   renderWindowInteractor->SetRenderWindow(renderWindow);
   renderWindow->Render();

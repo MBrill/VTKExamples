@@ -153,11 +153,14 @@ int main(int argc, char *argv[] )
   aren->AddActor(lines);
   aren->SetBackground(0.5,0.5,0.5);
 
-  aren->ResetCamera();
-  aren->GetActiveCamera()->Elevation(30.0);
-  aren->GetActiveCamera()->Azimuth(30.0);
-  aren->GetActiveCamera()->Dolly(1.2);
-  aren->ResetCameraClippingRange();
+  auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
+  aren->SetActiveCamera(cam);
+
+  //aren->ResetCamera();
+  //aren->GetActiveCamera()->Elevation(30.0);
+  //aren->GetActiveCamera()->Azimuth(30.0);
+  //aren->GetActiveCamera()->Dolly(1.2);
+  //aren->ResetCameraClippingRange();
 
   renWin->SetSize(640, 480);
   renWin->Render();

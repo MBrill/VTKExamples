@@ -18,12 +18,7 @@
 #include <vtkPoints.h>
 #include <vtkNamedColors.h>
 #include <vtkColor.h>
-<<<<<<< HEAD
-#include <vtkOpenVRInteractorStyle.h>
-=======
->>>>>>> f7d2f3acf11a6d912401dd25766405be530e3787
-
- 
+#include "testInteractorStyle.h"
 int main(int, char *[])
 {
   //Farben
@@ -181,11 +176,10 @@ int main(int, char *[])
   renderWindow->SetSize(800,640);
   vtkSmartPointer<vtkOpenVRRenderWindowInteractor> renderWindowInteractor = 
     vtkSmartPointer<vtkOpenVRRenderWindowInteractor>::New();
-  renderWindowInteractor->SetRenderWindow(renderWindow);
-<<<<<<< HEAD
-  renderWindowInteractor->SetInteractorStyle(vtkSmartPointer<vtkOpenVRInter>::New());
-=======
->>>>>>> f7d2f3acf11a6d912401dd25766405be530e3787
+  
+  vtkSmartPointer<TestInteractorStyle> style = vtkSmartPointer<TestInteractorStyle>::New();
+  style->SetActor(KugelVorneActor);
+  renderWindowInteractor->SetInteractorStyle(style);
   vtkSmartPointer<vtkOpenVRCamera> cam = 
     vtkSmartPointer<vtkOpenVRCamera>::New();
   renderer->SetActiveCamera(cam);

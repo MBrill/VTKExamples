@@ -225,6 +225,7 @@ int main (int argc, char *argv[])
 
   ren1->SetBackground(colors->GetColor3d("SlateGray").GetData());
   ren1->SetActiveCamera(aCam);
+  renWin->SetPhysicalScale(10.0);
   renWin->SetSize(640, 480);
 
   renWin->Render();

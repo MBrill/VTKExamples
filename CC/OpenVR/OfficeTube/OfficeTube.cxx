@@ -1,5 +1,5 @@
 #include <vtkActor.h>
-#include <vtkCamera.h>
+#include <vtkOpenVRCamera.h>
 #include <vtkNamedColors.h>
 #include <vtkPointData.h>
 #include <vtkPolyDataMapper.h>
@@ -377,8 +377,8 @@ int main (int argc, char *argv[])
   ren1->SetBackground(colors->GetColor3d("SlateGray").GetData());
 
 // Here we specify a particular view.
-  vtkSmartPointer<vtkCamera> aCamera =
-    vtkSmartPointer<vtkCamera>::New();
+  vtkSmartPointer<vtkOpenVRCamera> aCamera =
+    vtkSmartPointer<vtkOpenVRCamera>::New();
   aCamera->SetClippingRange(0.726079, 36.3039);
   aCamera->SetFocalPoint(2.43584, 2.15046, 1.11104);
   aCamera->SetPosition(-4.76183, -10.4426, 3.17203);

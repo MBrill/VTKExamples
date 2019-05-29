@@ -1,3 +1,0 @@
-D:/VTK/VTKExamples/CC/OpenVR/Dragon-build/CMakeFiles/TestDragon.dir
-D:/VTK/VTKExamples/CC/OpenVR/Dragon-build/CMakeFiles/ALL_BUILD.dir
-D:/VTK/VTKExamples/CC/OpenVR/Dragon-build/CMakeFiles/ZERO_CHECK.dir

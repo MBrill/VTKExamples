@@ -221,11 +221,12 @@ int main (int argc, char *argv[])
   aCam->SetFocalPoint(2.47736, -0.150024, 2.42361);
   aCam->SetPosition(1.57547, -13.4601, 5.47872);
   aCam->SetViewUp(0.00197003, 0.223588, 0.974682);
-//  aCam->Dolly(4.0);
+// aCam->Dolly(4.0);
   aCam->SetClippingRange(1, 100);
 
   ren1->SetBackground(colors->GetColor3d("SlateGray").GetData());
   ren1->SetActiveCamera(aCam);
+  renWin->SetPhysicalScale(10.0);
   renWin->SetSize(640, 480);
 
   renWin->Render();

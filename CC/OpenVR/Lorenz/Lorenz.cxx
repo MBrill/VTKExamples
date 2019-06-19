@@ -144,6 +144,7 @@ int main(int, char *[]) {
   renderer->SetBackground(colors->GetColor3d("PeachPuff").GetData());
 
   renWin->SetSize(640, 480);
+  renWin->SetPhysicalScale(100.0);
 
   auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
   renderer->SetActiveCamera(cam);

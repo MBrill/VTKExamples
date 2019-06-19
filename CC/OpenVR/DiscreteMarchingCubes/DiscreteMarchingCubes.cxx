@@ -64,7 +64,7 @@ int main (int /*argc*/, char * /* argv */ [])
 
   auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
   ren1->SetActiveCamera(cam);
-
+  renWin->SetPhysicalScale(100.0);
   renWin->Render();
 
   iren->Start();

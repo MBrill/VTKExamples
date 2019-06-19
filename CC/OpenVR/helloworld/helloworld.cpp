@@ -176,10 +176,11 @@ int main(int, char *[])
   renderWindow->SetSize(800,640);
   vtkSmartPointer<vtkOpenVRRenderWindowInteractor> renderWindowInteractor = 
     vtkSmartPointer<vtkOpenVRRenderWindowInteractor>::New();
-  
-  vtkSmartPointer<TestInteractorStyle> style = vtkSmartPointer<TestInteractorStyle>::New();
-  style->SetActor(KugelVorneActor);
-  renderWindowInteractor->SetInteractorStyle(style);
+  renderWindowInteractor->SetRenderWindow(renderWindow);
+  //Testing cusom InteractorStyle
+  //vtkSmartPointer<TestInteractorStyle> style = vtkSmartPointer<TestInteractorStyle>::New();
+  //style->SetActor(KugelVorneActor);
+ // renderWindowInteractor->SetInteractorStyle(style);
   vtkSmartPointer<vtkOpenVRCamera> cam = 
     vtkSmartPointer<vtkOpenVRCamera>::New();
   renderer->SetActiveCamera(cam);

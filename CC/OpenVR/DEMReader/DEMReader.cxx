@@ -69,9 +69,8 @@ int main(int argc, char* argv[])
 
   auto cam = vtkSmartPointer<vtkOpenVRCamera>::New();
   renderer->SetActiveCamera(cam);
-
   renderWindow->Render();
-  //renderWindowInteractor->Initialize();
+  renderWindowInteractor->Initialize();
 
   renderWindowInteractor->Start();
   

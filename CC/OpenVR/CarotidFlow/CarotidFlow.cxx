@@ -129,7 +129,7 @@ int main (int argc, char *argv[])
   ren1->AddActor(isoActor);
   ren1->SetBackground(colors->GetColor3d("Wheat").GetData());
   renWin->SetSize(640, 480);
-
+  renWin->SetPhysicalScale(10.0);
   vtkSmartPointer<vtkOpenVRCamera> cam1 =
     vtkSmartPointer<vtkOpenVRCamera>::New();
   cam1->SetClippingRange(17.4043, 870.216);

@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{EA2C7986-0E72-337E-84D6-FC5B28740F79}"
+	ProjectSection(ProjectDependencies) = postProject
+		{029DCC4B-6E8C-3EA6-873D-A38C4ADBB5E7} = {029DCC4B-6E8C-3EA6-873D-A38C4ADBB5E7}
+		{90B42511-C287-30A9-902C-D15E2446887E} = {90B42511-C287-30A9-902C-D15E2446887E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoxSeeds", "LoxSeeds.vcxproj", "{029DCC4B-6E8C-3EA6-873D-A38C4ADBB5E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{90B42511-C287-30A9-902C-D15E2446887E} = {90B42511-C287-30A9-902C-D15E2446887E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{90B42511-C287-30A9-902C-D15E2446887E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA2C7986-0E72-337E-84D6-FC5B28740F79}.Release|x64.ActiveCfg = Release|x64
+		{029DCC4B-6E8C-3EA6-873D-A38C4ADBB5E7}.Release|x64.ActiveCfg = Release|x64
+		{029DCC4B-6E8C-3EA6-873D-A38C4ADBB5E7}.Release|x64.Build.0 = Release|x64
+		{90B42511-C287-30A9-902C-D15E2446887E}.Release|x64.ActiveCfg = Release|x64
+		{90B42511-C287-30A9-902C-D15E2446887E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36E39F18-287B-3240-928B-5BB0103AC096}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{2A932783-ABD2-358F-B254-889FDB468C38}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A0CDCF37-0D80-3C90-8DEA-F449180808B7} = {A0CDCF37-0D80-3C90-8DEA-F449180808B7}
+		{E81E74FC-352C-3F07-A124-32111986DCFB} = {E81E74FC-352C-3F07-A124-32111986DCFB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiscreteMarchingCubes", "DiscreteMarchingCubes.vcxproj", "{A0CDCF37-0D80-3C90-8DEA-F449180808B7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E81E74FC-352C-3F07-A124-32111986DCFB} = {E81E74FC-352C-3F07-A124-32111986DCFB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{E81E74FC-352C-3F07-A124-32111986DCFB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A932783-ABD2-358F-B254-889FDB468C38}.Release|x64.ActiveCfg = Release|x64
+		{A0CDCF37-0D80-3C90-8DEA-F449180808B7}.Release|x64.ActiveCfg = Release|x64
+		{A0CDCF37-0D80-3C90-8DEA-F449180808B7}.Release|x64.Build.0 = Release|x64
+		{E81E74FC-352C-3F07-A124-32111986DCFB}.Release|x64.ActiveCfg = Release|x64
+		{E81E74FC-352C-3F07-A124-32111986DCFB}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44F17B3A-28B6-3C62-941D-7A73B57463CD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

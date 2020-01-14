@@ -16,10 +16,10 @@
 #include <vtkDataSetMapper.h>
 #include <vtkProperty.h>
 #include <vtkActor.h>
-#include <vtkCamera.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderWindowInteractor.h>
+#include <vtkOpenVRCamera.h>
+#include <vtkOpenVRRenderer.h>
+#include <vtkOpenVRRenderWindow.h>
+#include <vtkOpenVRRenderWindowInteractor.h>
 
 int main(void)
 {
@@ -170,12 +170,12 @@ vtkSmartPointer<vtkActor> basis = vtkSmartPointer<vtkActor>::New();
 //
 // Sicht, Renderer, Fenster und Interaktionen ...
 //
-vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
+vtkSmartPointer<vtkOpenVRCamera> camera = vtkSmartPointer<vtkOpenVRCamera>::New();
      camera->Dolly(1.2);
      camera->Azimuth(20);
      camera->Elevation(15);
 
-vtkSmartPointer<vtkRenderer> ren = vtkSmartPointer<vtkRenderer>::New();
+vtkSmartPointer<vtkOpenVRRenderer> ren = vtkSmartPointer<vtkOpenVRRenderer>::New();
      ren->MakeLight();
      ren->SetBackground(1.0, 1.0, 1.0);
      ren->AddActor(ecke1);
@@ -189,12 +189,12 @@ vtkSmartPointer<vtkRenderer> ren = vtkSmartPointer<vtkRenderer>::New();
      ren->ResetCamera();	 
      camera->Zoom(1.25);
 	 
-vtkSmartPointer<vtkRenderWindow> renWin = vtkSmartPointer<vtkRenderWindow>::New();
+vtkSmartPointer<vtkOpenVRRenderWindow> renWin = vtkSmartPointer<vtkOpenVRRenderWindow>::New();
     renWin->AddRenderer(ren);
     renWin->SetSize(1280, 720);
 	renWin->SetPosition(100, 50);
 
-vtkSmartPointer<vtkRenderWindowInteractor> iren = vtkSmartPointer<vtkRenderWindowInteractor>::New();
+vtkSmartPointer<vtkOpenVRRenderWindowInteractor> iren = vtkSmartPointer<vtkOpenVRRenderWindowInteractor>::New();
     iren->SetRenderWindow(renWin);
 
 renWin->Render();

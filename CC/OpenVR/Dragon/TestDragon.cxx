@@ -76,8 +76,8 @@ int TestDragon(int argc, char *argv[])
   light->SetPosition(1.0, 1.0, 1.0);
   renderer->AddLight(light);
 
-  const char* fileName = vtkTestUtilities::ExpandDataFileName(argc, argv,
-                                                               "Data/dragon.ply");
+  // Wir lesen dragon.ply ein
+  const char* fileName = "dragon.ply";
   vtkNew<vtkPLYReader> reader;
   reader->SetFileName(fileName);
 
@@ -109,12 +109,7 @@ int TestDragon(int argc, char *argv[])
     renderer->ResetCamera();
     renderWindow->Render();
 
-    int retVal = vtkRegressionTestImage( renderWindow.Get() );
-    if ( retVal == vtkRegressionTester::DO_INTERACTOR)
-    {
-      iren->Start();
-    }
-    return !retVal;
+    iren->Start();
   }
   return 0;
 }

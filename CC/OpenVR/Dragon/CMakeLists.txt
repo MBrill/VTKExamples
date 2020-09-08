@@ -42,15 +42,21 @@ FIND_PACKAGE(VTK REQUIRED)
 # OpenVR mit CMake finden
 # Wert setzen für OPENVR_ROOT_DIR für duke und armstrong
 set (OPENVR_ROOT_DIR "D:/Program Files/openvr-master/" CACHE STRING "OpenVR Verzeichnis")
+
 FIND_PACKAGE(OpenVR REQUIRED)
 IF(OPENVR_FOUND)
 	message(STATUS "OpenVR-Installation gefunden in ${OPENVR_ROOT_DIR}")
+	# Kommentar in vtkOpenVRRenderWindow.h - VTK_OPENVR_OBJECT_FACTORY anschalten
+    set(VTK_OPENVR_OBJECT_FACTORY TRUE CACHE STRING "Kommentar in vtkOpenVRRenderWindow.h")
 ENDIF(OPENVR_FOUND)
 
 # Falls VTK gefunden wurde Variablen schicken
 IF(VTK_FOUND)
   message(STATUS "VTK gefunden. Version: " ${VTK_VERSION} " " VTK_DIR: ${VTK_DIR})
   include(${VTK_USE_FILE})
+
+  # Geometriedatei in bin-Verzeichnis kopieren
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dragon.ply ${CMAKE_CURRENT_BINARY_DIR}/dragon.ply COPYONLY)
 
   # Das Build-Target festlegen
   ADD_EXECUTABLE(TestDragon TestDragon.cxx)

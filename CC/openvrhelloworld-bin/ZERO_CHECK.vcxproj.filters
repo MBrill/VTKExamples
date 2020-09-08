@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\VTK\VTKExamples\CC\openvrhelloworld-bin\CMakeFiles\ab4162c7496b51940765eeef8e4f88c7\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{53E40DB6-2EC0-3702-8804-69B33C906526}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

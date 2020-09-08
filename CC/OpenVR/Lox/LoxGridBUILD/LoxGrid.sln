@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{85F422BA-DA1D-3BC8-9339-EA60F1502245}"
+	ProjectSection(ProjectDependencies) = postProject
+		{979E583C-2202-393F-9E50-FF89243C2FE6} = {979E583C-2202-393F-9E50-FF89243C2FE6}
+		{AACC5EE0-5BED-3797-A86B-3A545C6D0F86} = {AACC5EE0-5BED-3797-A86B-3A545C6D0F86}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoxGrid", "LoxGrid.vcxproj", "{979E583C-2202-393F-9E50-FF89243C2FE6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AACC5EE0-5BED-3797-A86B-3A545C6D0F86} = {AACC5EE0-5BED-3797-A86B-3A545C6D0F86}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{AACC5EE0-5BED-3797-A86B-3A545C6D0F86}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85F422BA-DA1D-3BC8-9339-EA60F1502245}.Release|x64.ActiveCfg = Release|x64
+		{979E583C-2202-393F-9E50-FF89243C2FE6}.Release|x64.ActiveCfg = Release|x64
+		{979E583C-2202-393F-9E50-FF89243C2FE6}.Release|x64.Build.0 = Release|x64
+		{AACC5EE0-5BED-3797-A86B-3A545C6D0F86}.Release|x64.ActiveCfg = Release|x64
+		{AACC5EE0-5BED-3797-A86B-3A545C6D0F86}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B2B9CD9-086A-3009-A699-39D937AAC304}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\VTK\VTKExamples\CC\OpenVR\OfficeBUILD\CMakeFiles\ea8df844c65d00558425f51fbcbfec5a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2119E610-0303-3DA6-8D78-AF9962FC3FE1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

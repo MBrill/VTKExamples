@@ -1,0 +1,3 @@
+D:/VTK/VTKExamples/CC/OpenVR/AnatomicalOrientationBUILD/CMakeFiles/AnatomicalOrientation.dir
+D:/VTK/VTKExamples/CC/OpenVR/AnatomicalOrientationBUILD/CMakeFiles/ALL_BUILD.dir
+D:/VTK/VTKExamples/CC/OpenVR/AnatomicalOrientationBUILD/CMakeFiles/ZERO_CHECK.dir

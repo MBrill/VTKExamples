@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\VTK\VTKExamples\CC\OpenVR\ReadPLY\ReadPLY.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\VTK\VTKExamples\CC\OpenVR\ReadPLY\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5879CA22-E6DB-334D-B9CC-DF87956DFD61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -392,3 +392,4 @@ MigrationBackup/
 
 # Spyder und Anaconda
 **/.spyproject/*
+.DS_Store

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\VTK\VTKExamples\CC\OpenVR\HeadBone\HeadBone.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\VTK\VTKExamples\CC\OpenVR\HeadBone\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3645BCF4-EE6A-3E6C-B72D-1D53442BE34F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

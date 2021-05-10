@@ -1,11 +1,13 @@
-# --------------------------------------------------------------------------
+# -------------------------------------------------------------------------- 
 # Einführendes Beispiel für die Verwendung von CMake für 
-# plattform-unabhängige Builds.
-# --------------------------------------------------------------------------
+# plattform-unabhängige Builds. 
+# -------------------------------------------------------------------------- 
+
 # CMake-Version
-cmake_minimum_required (VERSION 3.10)
-# Wie heisst das Projekt?
+cmake_minimum_required (VERSION 3.20) 
+# Wie heisst das Projekt? 
 project (helloCMake)
+
 
 # Dokumentation mit doxygen erstellen
 INCLUDE(CMakeDoxygen.txt)
@@ -36,7 +38,7 @@ endif()
 # und die lästigen Warnings für Konsolen-Anwendungen sein zu lassen.
 if(MSVC)
         add_definitions(-D_USE_MATH_DEFINES)
-	    add_definitions(-D_CRT_SECURE_NO_WARNINGS)      
+	    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
 
 # Mit add_executable definieren wir ein neues Target, gefolgt
@@ -45,4 +47,4 @@ endif()
 # In unserem ersten Beispiel haben wir ein Hauptprogramm in der Datei
 # main.cpp, und eine Klasse für die Berechnung der Summe zweier ganzer Zahlen
 # in den Dateien Compute.h und Compute.cpp.
-add_executable (main main.cpp Compute.cpp Compute.h) 
+add_executable (main main.cpp Compute.cpp Compute.h)

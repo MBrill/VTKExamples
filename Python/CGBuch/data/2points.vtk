@@ -1,0 +1,12 @@
+# vtk DataFile Version 1.0
+Polygonzug mit dem Wort VISLAB
+ASCII
+
+DATASET POLYDATA
+POINTS 2 float
+0.0 0.0 0.0
+1.0 0.0 0.0
+
+VERTICES 2 4
+1 0
+1 1

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------------
-// Hauptprogramm für die Demonstration der Verwendung von CMake
+// Hauptprogramm für die Demonstration der Verwendung von
 // Unit-Testing mit ctest
 //
 // Tests in VS starten: Target RUN_TESTS auswählen und "Erstellen" auswählen.

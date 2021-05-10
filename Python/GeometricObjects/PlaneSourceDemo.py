@@ -1,15 +1,14 @@
-#!/usr/bin/env python
-
+# -*- coding: utf-8 -*-
 import vtk
 
 
 def create_arrow(pd_length, start_point, end_point):
     # Create an arrow.
     arrow_source = vtk.vtkArrowSource()
-    arrow_source.SetShaftRadius(pd_length * .01)
+    arrow_source.SetShaftRadius(pd_length * 0.01)
     arrow_source.SetShaftResolution(20)
-    arrow_source.SetTipLength(pd_length * .1)
-    arrow_source.SetTipRadius(pd_length * .05)
+    arrow_source.SetTipLength(pd_length * 0.1)
+    arrow_source.SetTipRadius(pd_length * 0.05)
     arrow_source.SetTipResolution(20)
 
     # Compute a basis
